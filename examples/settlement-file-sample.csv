@@ -1,0 +1,3 @@
+record_type,acquirer_ref,parent_ref,merchant_id,amount,currency,transaction_time
+CAPTURE,acq_06example0000000000000001,acq_06example0000000000000000,mer_06example000000000000000,8000,USD,2026-03-02T10:15:00Z
+REFUND,acq_06example0000000000000002,acq_06example0000000000000001,mer_06example000000000000000,3000,USD,2026-03-02T11:20:00Z

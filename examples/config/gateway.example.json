@@ -1,0 +1,46 @@
+{
+  "env": "prod",
+  "listen_addr": "0.0.0.0:8080",
+  "db_path": "/data/gateway.db",
+  "log_level": "info",
+  "log_format": "json",
+  "max_body_bytes": 1048576,
+  "trust_proxy_headers": false,
+  "rate_limit": {
+    "merchant_rps": 25, "merchant_burst": 50,
+    "admin_rps": 10, "admin_burst": 20,
+    "anonymous_rps": 5, "anonymous_burst": 10
+  },
+  "payments": {
+    "authorization_ttl": "168h",
+    "max_amount_minor": 100000000,
+    "acquirer_timeout": "10s",
+    "idempotency_ttl": "24h"
+  },
+  "acquirer": {
+    "base_latency": "20ms", "jitter": "30ms", "slow_latency": "1500ms",
+    "discrepancy_rate": 0, "discrepancy_seed": "epg"
+  },
+  "fraud": {
+    "review_score": 50, "block_score": 80,
+    "amount_review_minor": 500000, "amount_block_minor": 5000000,
+    "amount_overrides": { "JPY": [50000, 500000] },
+    "card_velocity_max": 5, "card_velocity_window": "10m",
+    "ip_velocity_max": 10, "ip_velocity_window": "10m",
+    "merchant_velocity_max": 600, "merchant_velocity_window": "1m",
+    "blocked_bins": ["410000"],
+    "high_risk_countries": [],
+    "disabled_rules": [],
+    "geo_ranges": { "192.0.2.0/24": "US", "198.51.100.0/24": "GB", "203.0.113.0/24": "DE" }
+  },
+  "fees": { "percent_bps": 290, "fixed_minor": 30, "refund_fixed_minor": 0, "return_fee_on_refund": false, "rounding": "half_even" },
+  "settlement": { "payout_delay_days": 2, "auto_run": true, "auto_run_hour_utc": 1 },
+  "webhooks": {
+    "allow_insecure_http": false, "allow_private_networks": false,
+    "max_attempts": 8, "base_backoff": "5s", "max_backoff": "1h",
+    "request_timeout": "10s", "poll_interval": "500ms", "concurrency": 8,
+    "secret_rotation_grace": "24h", "max_endpoints_per_merchant": 10
+  },
+  "api_keys": { "rotation_grace": "24h" },
+  "jobs": { "authorization_expiry_interval": "1m", "purge_interval": "10m", "payout_interval": "5m" }
+}

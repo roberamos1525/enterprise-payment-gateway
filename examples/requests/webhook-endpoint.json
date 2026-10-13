@@ -1,0 +1,5 @@
+{
+  "url": "https://hooks.example-coffee.test/gateway",
+  "description": "order service",
+  "events": ["payment_intent.captured", "refund.succeeded", "refund.failed", "payout.paid"]
+}

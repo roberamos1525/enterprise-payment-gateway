@@ -1,0 +1,8 @@
+{
+  "name": "Example Coffee Roasters",
+  "email": "payments@example-coffee.test",
+  "country": "US",
+  "default_currency": "USD",
+  "activate": true,
+  "fees": { "percent_bps": 275, "fixed_minor": 25, "refund_fixed_minor": 10, "return_fee_on_refund": false }
+}

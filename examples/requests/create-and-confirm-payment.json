@@ -1,0 +1,12 @@
+{
+  "amount": 4599,
+  "currency": "USD",
+  "capture_method": "manual",
+  "description": "2x Ethiopia Yirgacheffe 250g",
+  "metadata": { "order_id": "ord_1001" },
+  "billing_country": "US",
+  "confirm": true,
+  "payment_method": {
+    "card": { "number": "4242424242424242", "exp_month": 12, "exp_year": 2030, "cvc": "123", "holder_name": "Test Cardholder" }
+  }
+}
