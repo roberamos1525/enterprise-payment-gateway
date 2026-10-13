@@ -1,0 +1,24 @@
+# Binaries and build output
+/bin/
+/dist/
+*.exe
+*.test
+*.out
+/gateway
+/gatewayctl
+/webhook-receiver
+
+# Local databases and webhook captures
+*.db
+*.db-wal
+*.db-shm
+webhooks.ndjson
+
+# Secrets
+.env
+*.pem
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
